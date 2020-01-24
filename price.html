@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>藤岡行政書士</title>
+  <link rel="stylesheet" href="./css/reset.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+  <link rel="stylesheet" href="./css/common.min.css">
+  <link rel="stylesheet" href="./css/price.min.css">
+</head>
+<body class="body">
+  <header class="header">
+    <div class="header-wrapper clearfix">
+      <h1 class="logo"><a href="index.html"><img src="img/logo.svg"></a></h1>
+      <nav class="nav" role="navigation">
+        <ul class="nav-menu">
+          <li><a class="nav-menu-item" href="contact.html">Contact</a></li>
+          <li><a class="nav-menu-item" href="blog.html">Blog</a></li>
+          <li><a class="nav-menu-item" href="price.html">Price</a></li>
+          <li><a class="nav-menu-item" href="service.html">Service</a></li>
+          <li><a class="nav-menu-item" href="about.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <div class="page">
+      <h2 class="page-title">Price</h2>
+    </div>
+    <section class="menu">
+      <div class="menu-box">
+        <p class="menu-box-p">IT法務</p>
+        <a href="#it" class="menu-box-arrow">
+          <i class="fas fa-chevron-down"></i>
+        </a>
+      </div>
+      <div class="menu-box">
+        <p class="menu-box-p">ビザ申請業務</p>
+        <a href="#biza" class="menu-box-arrow">
+          <i class="fas fa-chevron-down"></i>
+        </a>
+      </div>
+      <div class="menu-box">
+        <p class="menu-box-p">民泊申請</p>
+        <a href="#minpaku" class="menu-box-arrow">
+          <i class="fas fa-chevron-down"></i>
+        </a>
+      </div>
+    </section>
+    <section id="it">
+      <div class="title">
+        <div class="title-no">
+          #01
+        </div>
+        <p class="title-name">IT法務</p>
+      </div>
+      <p class="komon">IT法務顧問</p>
+      <p class="info">IT法務顧問継続的にリーガルチェック、法務サポートを行います。</p>
+      <table class="it-table">
+        <tr>
+          <th>業務内容</th><th>報酬額</th><th>備考</th>
+        </tr>
+        <tr>
+          <td></td><td></td><td></td>
+        </tr>
+        <tr>
+          <td></td><td></td><td></td>
+        </tr>
+        <tr>
+          <td></td><td></td><td></td>
+        </tr>
+        <tr>
+          <td></td><td></td><td></td>
+        </tr>
+        <tr>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+    </section>
+    <section id="biza">
+      <div class="title">
+        <div class="title-no">
+          #02
+        </div>
+        <p class="title-name">ビザ申請業務</p>
+      </div>
+      <p class="info">IT法務顧問継続的にリーガルチェック、法務サポートを行います。</p>
+      <table class="biza-table">
+        <tr>
+          <th>業務内容</th><th>報酬額</th><th>備考</th>
+        </tr>
+        <tr>
+          <td></td><td></td><td></td>
+        </tr>
+        <tr>
+          <td></td><td></td><td></td>
+        </tr>
+        <tr>
+          <td></td><td></td><td></td>
+        </tr>
+        <tr>
+          <td></td><td></td><td></td>
+        </tr>
+        <tr>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+    </section>
+    <section id="minpaku">
+      <div class="title">
+        <div class="title-no">
+          #03
+        </div>
+        <p class="title-name">民泊業務</p>
+      </div>
+      <p class="sinse">住宅宿泊事業届等の申請<br>
+        色々なご提案ができます。直接当社までお問い合わせください直接お問い合わせください</p>
+    </section>
+    <section class="contact">
+      <p class="contact-p">まずはメールでお気軽にお問い合わせください</p>
+      <div class="btn">
+        <a href="contact.html" class="btn-radius">CONTACT</a>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+
+  </footer>
+  <!-- ＃リンクのスムーズスクロール -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+<script>
+  $(function(){
+    // #で始まるリンクをクリックしたら実行されます
+    $('a[href^="#"]').click(function() {
+      // スクロールの速度
+      var speed = 400; // ミリ秒で記述
+      var href= $(this).attr("href");
+      var target = $(href == "#" || href == "" ? 'html' : href);
+      var position = target.offset().top;
+      $('body,html').animate({scrollTop:position}, speed, 'swing');
+      return false;
+    });
+  });
+</script>
+</body>
