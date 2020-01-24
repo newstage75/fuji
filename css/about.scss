@@ -1,0 +1,186 @@
+@charset "UTF-8";
+
+$pc: 1280px;//PC
+$bp: 660px;//ブレークポイント
+
+$pcw:(100vw/1280);
+$spw:(100vw/375);
+
+
+//ブレークポイントのメディアクエリ
+@mixin bp {
+  @media (max-width: ($bp)) {
+    @content;
+  }
+}
+//タイトルPCフォント
+@mixin title-font-pc{
+  font-size: 48*$pcw;
+  font-family: Avenir;
+  color: #A4ABB0;
+  text-align: center;
+  font-weight: bold;
+}
+//タイトルSPフォント
+@mixin title-font-sp{
+
+}
+//説明文フォント
+@mixin content-font-pc{
+  font-size: 16*$pcw;
+  line-height: 1.8;
+  font-family: "游ゴシック体", YuGothic;
+  color: #A4ABB0;
+}
+//説明文SPフォント
+@mixin content-font-sp{
+
+}
+//ボタンのCSS
+@mixin btn-css{
+  background-color: #364D6A;
+  border-radius: 35*$pcw;
+  cursor: pointer;
+  display: block;
+  text-align: center;
+  margin: 50*$pcw auto;
+  &:hover{
+    opacity: 0.8;
+    transition: 0.3s;
+  }
+}
+
+.page{
+  background-color: #202037;
+  &-title{
+    font-size: 48*$pcw;
+    padding: 114*$pcw 537*$pcw;
+    text-align: center;
+    color: #fff;
+    font-family: Avenir;
+  }
+}
+.top{
+  width: 100%;
+  height: 430*$pcw;
+  background: url(../img/about-top.png) center no-repeat;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+.top-bottom{
+  margin: 0 auto;
+  position: relative;
+  top: -128*$pcw;
+  width: 997*$pcw;
+  height: 256*$pcw;
+  background-color: #F2F0E8;
+  padding: 80*$pcw 60*$pcw;
+  display: flex;
+  justify-content: space-between;
+  color: #434343;
+  &-copy{
+    width: 270*$pcw;
+    font-size: 32*$pcw;
+    letter-spacing: 0.1em;
+    line-height: 1.5;
+    font-family: Avenir;
+  }
+  &-content{
+    width: 486*$pcw;
+    font-size: 20*$pcw;
+    line-height: 2;
+    font-weight: bold;
+    font-family:  "游ゴシック", "Yu Gothic", "游ゴシック体", YuGothic;
+  }
+}
+.point{
+  margin: 0 90*$pcw 195*$pcw;
+  .title{
+    &-name{
+      display: inline-block;
+      font-size: 36*$pcw;
+      font-family: Avenir;
+      padding-right: 35*$pcw;
+      padding-bottom: 20*$pcw;
+      border-bottom: 4*$pcw solid;
+      border-image: linear-gradient(to right, #C07C59 0%, #AB5683 100%);
+      border-image-slice: 1;
+    }
+    &-copy{
+      font-size: 20*$pcw;
+      font-family: "游ゴシック", "Yu Gothic", "游ゴシック体", YuGothic, Avenir;
+      margin-top: 38*$pcw;
+    }
+  }
+  &-content{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    margin-top: 60*$pcw;
+    &-p{
+      width: 470*$pcw;
+      font-size: 14*$pcw;
+      font-weight: bold;
+      line-height: 1.8;
+      color: #474747;
+    }
+  }
+
+}
+.office-wrapper{
+  background-color: #F2F2F2;
+  padding: 117*$pcw 197*$pcw 133*$pcw;
+}
+.office{
+  display: flex;
+  justify-content: space-between;
+  &-left{
+    width: 360*$pcw;
+    .data{
+      font-size: 36*$pcw;
+      font-family: Avenir;
+    }
+    .info{
+      margin-top: 53*$pcw;
+      li{
+        font-size: 20*$pcw;
+        font-family: bold;
+        margin-top: 27*$pcw;
+        color: #505050;
+        font-family: "游ゴシック", "Yu Gothic", "游ゴシック体", YuGothic, Avenir;
+      }
+    }
+  }
+  &-right{
+    width: 445*$pcw;
+  }
+}
+.map{
+  width: 100%;
+  height: 410*$pcw;
+}
+.contact{
+  margin: 0 auto 101*$pcw;
+  &-p{
+    margin-top: 161*$pcw;
+    text-align: center;
+    font-size: 20*$pcw;
+    font-family:  "游ゴシック", "Yu Gothic", "游ゴシック体", YuGothic;
+  }
+  .btn{
+    @include btn-css
+    background-color: #202037;
+    width: 520*$pcw;
+    height: 110*$pcw;
+    border-radius: 55*$pcw;
+    &-radius{
+      display: inline-block;
+      color: #fff;
+      margin: 35*$pcw auto;
+      font-size: 35*$pcw;
+      font-family: Avenir;
+    }
+  }
+}

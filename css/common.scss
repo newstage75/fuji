@@ -1,0 +1,90 @@
+@charset "UTF-8";
+
+$pc: 1280px;//PC
+$bp: 660px;//ブレークポイント
+
+$pcw:(100vw/1280);
+$spw:(100vw/375);
+
+
+//ブレークポイントのメディアクエリ
+@mixin bp {
+  @media (max-width: ($bp)) {
+    @content;
+  }
+}
+//タイトルPCフォント
+@mixin title-font-pc{
+  font-size: 48*$pcw;
+  font-family: Avenir;
+  color: #A4ABB0;
+  text-align: center;
+  font-weight: bold;
+}
+//タイトルSPフォント
+@mixin title-font-sp{
+
+}
+//説明文フォント
+@mixin content-font-pc{
+  font-size: 16*$pcw;
+  line-height: 1.8;
+  font-family: "游ゴシック", "Yu Gothic", "游ゴシック体", YuGothic;
+  color: #A4ABB0;
+}
+//説明文SPフォント
+@mixin content-font-sp{
+
+}
+//ボタンのCSS
+@mixin btn-css{
+  background-color: #364D6A;
+  border-radius: 35*$pcw;
+  cursor: pointer;
+  display: block;
+  text-align: center;
+  margin: 50*$pcw auto;
+}
+
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: left;
+}
+
+.body{
+  font-family: "游ゴシック", "Yu Gothic", "游ゴシック体", YuGothic, Avenir;
+}
+.header{
+  background-color: #FAFAFA;
+}
+.header-wrapper{
+  height: 110*$pcw;
+  margin:auto 95*$pcw;
+  .logo{
+    display: inline-block;
+    float: left;
+    margin: 45*$pcw auto;
+    width: 194*$pcw;
+    height: 19*$pcw;
+    a{
+      color:#444444;
+    }
+  }
+  .nav-menu{
+    &-item{
+      float: right;
+      display: inline-block;
+      margin-left: 54*$pcw;
+      margin-top: 45*$pcw;
+      font-size: 16*$pcw;
+      font-family: Avenir;
+      color:#444444;
+    }
+  }
+}
+
+.footer{
+  height: 146*$pcw;
+  background-color: #202037;
+}
