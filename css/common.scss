@@ -57,6 +57,9 @@ $spw:(100vw/375);
 }
 .header{
   background-color: #FAFAFA;
+  @include bp{
+    display: none;
+  }
 }
 .header-wrapper{
   height: 110*$pcw;
