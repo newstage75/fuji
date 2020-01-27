@@ -5,7 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <title>藤岡行政書士</title>
   <link rel="stylesheet" href="./css/reset.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap" rel="stylesheet">
+  <!-- drawer.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/drawer/3.2.2/css/drawer.min.css">
+  <!-- drawer.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/drawer/3.2.2/js/drawer.min.js"></script>
+
   <link rel="stylesheet" href="./css/common.min.css">
   <link rel="stylesheet" href="./css/style.min.css">
 </head>
@@ -27,7 +33,7 @@
   <main>
     <div class="top bg-slider">
       <img class="top-logo" src="img/top-logo.png" alt="">
-      <h3 class="top-comment">IT専門の行政書士たちが、あなたのビジネスを守ります。</h3>
+      <h3 class="top-comment">IT専門の行政書士たちが、<br class="sp_br">あなたのビジネスを守ります。</h3>
     </div>
     <div class="top-bottom">
       <div class="top-bottom-left">
@@ -50,7 +56,7 @@
         </div>
       </div>
       <section class="service">
-        <h2 class="title"> Service</h2>
+        <h2 class="title">Service</h2>
         <div class="service-wrapper">
           <div class="box">
             <img class="box-image" src="img/service1.png" alt="service1">
@@ -144,9 +150,9 @@
           <a href="blog.html" class="btn-radius">一覧を見る</a>
         </div>
       </section>
-      <iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d433.35998054183466!2d135.75595381888556!3d35.01733542411868!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6001087e8f947a7d%3A0x6a610bd4c980dd14!2z44CSNjA0LTAwOTEg5Lqs6YO95bqc5Lqs6YO95biC5Lit5Lqs5Yy65qKF5bGL55S65Li45aSq55S66YCa6Yec5bqn5p2x5YWl77yR77yX77yY!5e0!3m2!1sja!2sjp!4v1579612884299!5m2!1sja!2sjp" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+      <div id="map"></iframe>
       <section class="contact">
-        <p class="contact-p">まずはメールでお気軽にお問い合わせください</p>
+        <p class="contact-p">まずはメールで<br class="sp_br">お気軽にお問い合わせください</p>
         <div class="btn">
           <a href="contact.html" class="btn-radius">CONTACT</a>
         </div>
@@ -155,7 +161,7 @@
     <footer class="footer">
 
     </footer>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+    <!-- bg-switcher -->
     <script src="js/jquery.bgswitcher.js"></script>
     <script>
     jQuery(function($) {
@@ -164,17 +170,29 @@
         });
     });
     </script>
-
-<!-- マップオリジナル -->
+    <!-- マップオリジナル -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBv3idrO7k2VvsOlh5hN0hZd7tNvuvZ0VI"></script>
 <script>
-      var marker = new google.maps.Marker({
-      	map: _map,
-      	position: new google.maps.LatLng(35.019489, 135.756319),
-      	animation: google.maps.Animation.DROP,
-      	icon: {
-      		url: 'img/map-icon.png',                 //アイコンのURL
-      		scaledSize: new google.maps.Size(40, 40) //サイズ
-      	}
-      });
-</script>
-  </body>
+    // id属性の指定
+    var mapDiv = document.getElementById( "map" ) ;
+    // 位置座標を変数mapPositionに代入
+    var mapPosition = {
+      lat: 35.017189, // 緯度
+      lng: 135.756307// 経度
+    };
+    // 地図のオプション
+    var mapOptions = {
+      center: mapPosition ,
+      zoom: 17 ,
+    } ;
+    // Mapクラスを変数mapに代入
+    var map = new google.maps.Map( mapDiv, mapOptions );
+    // Markerクラスの設定
+    var marker = new google.maps.Marker( {
+      map: map ,
+      position: mapPosition ,
+      icon: "img/map-small.png" ,
+    } ) ;
+  </script>
+</body>
+</html>

@@ -20,10 +20,9 @@ $spw:(100vw/375);
   color: #A4ABB0;
   text-align: center;
   font-weight: bold;
-}
-//タイトルSPフォント
-@mixin title-font-sp{
-
+  @include bp{
+    font-size: 24*$spw;
+  }
 }
 //説明文フォント
 @mixin content-font-pc{
@@ -31,10 +30,10 @@ $spw:(100vw/375);
   line-height: 1.8;
   font-family: "游ゴシック", "Yu Gothic", "游ゴシック体", YuGothic;
   color: #A4ABB0;
-}
-//説明文SPフォント
-@mixin content-font-sp{
-
+  @include bp{
+    font-size: 12*$spw;
+    font-weight: bold;
+  }
 }
 //ボタンのCSS
 @mixin btn-css{
@@ -44,8 +43,18 @@ $spw:(100vw/375);
   display: block;
   text-align: center;
   margin: 50*$pcw auto;
+  @include bp{
+    font-size: 16*$spw;
+    width: 313*$spw;
+    height: 70*$spw;
+    border-radius: 35*$spw;
+    margin-top: 55*$spw;
+  }
+  &:hover{
+    opacity: 0.8;
+    transition: 0.3s;
+  }
 }
-
 .clearfix::after {
   content: "";
   display: block;
@@ -70,6 +79,8 @@ $spw:(100vw/375);
     margin: 45*$pcw auto;
     width: 194*$pcw;
     height: 19*$pcw;
+    max-width: 194*$pcw;
+    max-height: 19*$pcw;
     a{
       color:#444444;
     }
@@ -86,8 +97,75 @@ $spw:(100vw/375);
     }
   }
 }
+.page{
+  background-color: #202037;
+  &-title{
+    font-size: 48*$pcw;
+    padding: 114*$pcw 537*$pcw;
+    text-align: center;
+    color: #fff;
+    letter-spacing: 0.15em;
+    font-weight: bold;
+    font-family: Avenir;
+    @include bp{
+    font-size: 42*$spw;
+    padding: 25*$spw;
+    }
+  }
+}
 
+#map{
+  width: 100%;
+  height: 410*$pcw;
+  margin: 150*$pcw auto 0;
+  @include bp{
+    margin-top: 175*$spw;
+    height: 407*$spw;
+  }
+}
+
+.contact{
+  margin: 161*$pcw auto 101*$pcw;
+  @include bp{
+    margin: 95*$spw auto 200*$spw;
+  }
+  &-p{
+    text-align: center;
+    font-size: 20*$pcw;
+    line-height: 1.8;
+    font-family:  "游ゴシック", "Yu Gothic", "游ゴシック体", YuGothic;
+    @include bp{
+      font-size: 20*$spw;
+    }
+  }
+  .btn{
+    @include btn-css
+    background-color: #202037;
+    width: 520*$pcw;
+    height: 110*$pcw;
+    border-radius: 55*$pcw;
+    &-radius{
+      display: inline-block;
+      color: #fff;
+      margin: 35*$pcw auto;
+      font-size: 32*$pcw;
+      font-weight: bold;
+      @include bp{
+        margin: 24*$spw auto;
+        font-size: 16*$spw;
+      }
+    }
+  }
+}
 .footer{
   height: 146*$pcw;
   background-color: #202037;
+  @include bp{
+    height: 155*$spw;
+  }
+}
+@media screen and (min-width: 660px) {
+  .sp_br{
+    display: none;
+  }
 }

@@ -1,59 +1,5 @@
-@charset "UTF-8";
+@import "common.scss";
 
-$pc: 1280px;//PC
-$bp: 660px;//ブレークポイント
-
-$pcw:(100vw/1280);
-$spw:(100vw/375);
-
-
-//ブレークポイントのメディアクエリ
-@mixin bp {
-  @media (max-width: ($bp)) {
-    @content;
-  }
-}
-//タイトルPCフォント
-@mixin title-font-pc{
-  font-size: 48*$pcw;
-  font-family: Avenir;
-  color: #A4ABB0;
-  text-align: center;
-  font-weight: bold;
-  @include bp{
-    font-size: 24*$spw;
-  }
-}
-//説明文フォント
-@mixin content-font-pc{
-  font-size: 16*$pcw;
-  line-height: 1.8;
-  font-family: "游ゴシック", "Yu Gothic", "游ゴシック体", YuGothic;
-  color: #A4ABB0;
-  @include bp{
-    font-size: 12*$spw;
-    font-weight: bold;
-  }
-}
-//ボタンのCSS
-@mixin btn-css{
-  background-color: #364D6A;
-  border-radius: 35*$pcw;
-  cursor: pointer;
-  display: block;
-  text-align: center;
-  margin: 50*$pcw auto;
-  @include bp{
-    font-size: 16*$spw;
-    width: 313*$spw;
-    height: 70*$spw;
-    border-radius: 35*$spw;
-  }
-  &:hover{
-    opacity: 0.8;
-    transition: 0.3s;
-  }
-}
 .top{
   height: 750.44*$pcw;
   background-position: center;
@@ -189,6 +135,9 @@ $spw:(100vw/375);
 }
 .service{
   margin: 126*$pcw 91*$pcw 0;
+  @include bp{
+    margin: 80*$spw 29*$spw 0;
+  }
   .title{
     @include title-font-pc;
   }
@@ -197,16 +146,23 @@ $spw:(100vw/375);
     justify-content: space-between;
     flex-wrap: wrap;
     margin-top: 43*$pcw;
+    @include bp{
+      margin-top: 32*$spw;
+    }
     .box{
       width: 336*$pcw;
       @include bp{
         width: 100%;
+        &:nth-child(n+2){
+          margin-top: 60*$spw;
+        }
       }
       &-image{
-        width: 335*$pcw;
-        height: 231*$pcw;
+        width: 100%;
+        height: auto;
         max-width: 335*$pcw;
         max-height: 231*$pcw;
+        object-fit: cover;
         @include bp{
           width: 315*$spw;
           height: 217*$spw;
@@ -222,6 +178,10 @@ $spw:(100vw/375);
         background-color: #fff;
         border: 3px solid #2C334B;
         display: inline-block;
+        @include bp{
+          top: -24*$spw;
+          left: 15*$spw;
+        }
         &-no{
           display: inline-block;
           color: #fff;
@@ -229,11 +189,23 @@ $spw:(100vw/375);
           font-family: Avenir;
           padding: 16*$pcw 20*$pcw;
           font-size: 20*$pcw;
+          @include bp{
+            font-size: 20*$spw;
+            padding: 15*$spw;
+          }
         }
         &-name{
           display: inline-block;
-          padding: 11*$pcw 60*$pcw;
+          padding: 11*$pcw auto;
           font-size: 24*$pcw;
+          text-align: center;
+          width: 206*$pcw;
+          @include bp{
+            font-size: 24*$spw;
+            padding: 10*$spw auto;
+            text-align: center;
+            width: 206*$spw;
+          }
         }
       }
       &-p{
@@ -263,6 +235,9 @@ $spw:(100vw/375);
 }
 .blog{
   margin: 126*$pcw 91*$pcw 0;
+  @include bp{
+    margin:176*$spw 29*$spw 0 ;
+  }
   .title{
     @include title-font-pc;
   }
@@ -279,15 +254,16 @@ $spw:(100vw/375);
       .blog-image{
         max-width: 335*$pcw;
         max-height: 231*$pcw;
-        width: auto;
         height: 231*$pcw;
+        width: auto;
+        object-fit: cover;
         display: block;
-        margin: 0 auto;
+        margin: auto;
         @include bp{
           max-width: 150*$spw;
           max-height: 103*$spw;
-          width: auto;
           height: 103*$spw;
+          width: auto;
         }
       }
       .blog-time{
@@ -327,40 +303,6 @@ $spw:(100vw/375);
       display: inline-block;
       margin: 27*$pcw auto;
       color: #fff;
-      @include bp{
-        margin: 24*$spw auto;
-      }
-    }
-  }
-}
-#map{
-  width: 100%;
-  height: 410*$pcw;
-  margin: 150*$pcw auto 0;
-}
-.contact{
-  margin: 161*$pcw auto 101*$pcw;
-  &-p{
-    text-align: center;
-    font-size: 20*$pcw;
-    font-family:  "游ゴシック", "Yu Gothic", "游ゴシック体", YuGothic;
-    @include bp{
-      font-size: 20*$spw;
-    }
-  }
-  .btn{
-    @include btn-css
-    background-color: #202037;
-    width: 520*$pcw;
-    height: 110*$pcw;
-    border-radius: 55*$pcw;
-    &-radius{
-      display: inline-block;
-      color: #fff;
-      margin: 35*$pcw auto;
-      font-size: 35*$pcw;
-      font-family: "游ゴシック", "Yu Gothic", "游ゴシック体", YuGothic, Avenir;
-      font-size: 16*$spw;
       @include bp{
         margin: 24*$spw auto;
       }

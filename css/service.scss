@@ -1,72 +1,10 @@
-@charset "UTF-8";
-
-$pc: 1280px;//PC
-$bp: 660px;//ブレークポイント
-
-$pcw:(100vw/1280);
-$spw:(100vw/375);
-
-
-//ブレークポイントのメディアクエリ
-@mixin bp {
-  @media (max-width: ($bp)) {
-    @content;
-  }
-}
-//タイトルPCフォント
-@mixin title-font-pc{
-  font-size: 48*$pcw;
-  font-family: Avenir;
-  color: #A4ABB0;
-  text-align: center;
-  font-weight: bold;
-}
-//タイトルSPフォント
-@mixin title-font-sp{
-
-}
-//説明文フォント
-@mixin content-font-pc{
-  font-size: 16*$pcw;
-  line-height: 1.8;
-  font-family: "游ゴシック体", YuGothic;
-  color: #A4ABB0;
-}
-//説明文SPフォント
-@mixin content-font-sp{
-
-}
-//ボタンのCSS
-@mixin btn-css{
-  background-color: #364D6A;
-  border-radius: 35*$pcw;
-  cursor: pointer;
-  display: block;
-  text-align: center;
-  margin: 50*$pcw auto;
-  &:hover{
-    opacity: 0.8;
-    transition: 0.3s;
-  }
-}
-.page{
-  background-color: #202037;
-  &-title{
-    font-size: 48*$pcw;
-    padding: 114*$pcw 537*$pcw;
-    text-align: center;
-    color: #fff;
-    font-family: Avenir;
-  }
-}
+@import "common.scss";
 .top{
-  width: 100%;
   height: 430*$pcw;
-  background: url(../img/service-top.png) center no-repeat;
-  background-size: contain;
-  background-repeat: no-repeat;
+  width: 100%;
+  background: url(../img/service-top.png) top no-repeat;
+  background-size: cover;
   background-attachment: fixed;
-  background-position: top;
 }
 .service{
   margin: 159*$pcw 94*$pcw 100*$pcw;
@@ -74,22 +12,39 @@ $spw:(100vw/375);
     display: flex;
     justify-content: space-between;
     margin-top: 116*$pcw;
+    flex-wrap: wrap;
+    @include bp{
+      margin-top: 80*$spw;
+    }
     &-left{
       width: 533*$pcw;
+      @include bp{
+        width: 100%;
+      }
       //title部分のcss
       .title{
-        height: 77*$pcw;
         font-size: 24*$pcw;
+        font-weight: bold;
         &-no{
           display: inline-block;
           color: #fff;
           font-family: Avenir;
           background-color: #202037;
           padding: 25*$pcw;
+          @include bp{
+            font-size: 20*$spw;
+            padding: 15*$spw;
+          }
         }
         &-name{
           display: inline-block;
           padding-left: 38*$pcw;
+          @include bp{
+            font-size: 24*$spw;
+            padding: 10*$spw auto;
+            text-align: center;
+            width: 206*$spw;
+          }
         }
       }
       &-p{
@@ -97,26 +52,36 @@ $spw:(100vw/375);
         line-height: 2;
         color:#888888;
         margin-top: 30*$pcw;
+        @include bp{
+          font-size: 12*$spw;
+        }
       }
     }
     &-right{
       width: 477*$pcw;
       padding: 65*$pcw 65*$pcw 55*$pcw;
       background-color: #F2F0E8;
+      @include bp{
+        width: 100%;
+        margin-top: 30*$spw;
+      }
       .ser-name{
         text-align: center;
         font-size: 20*$pcw;
         color: #202037;
+        @include bp{
+          font-size: 16*$spw;
+        }
         &::before{
           content: "“";
-          font-size: 64*$pcw;
+          font-size: 56*$pcw;
           color: #888888;
           vertical-align: middle;
           margin: 0 30*$pcw;
         }
         &::after{
           content: "”";
-          font-size: 64*$pcw;
+          font-size: 56*$pcw;
           color: #888888;
           vertical-align: middle;
           margin: 0 20*$pcw;
@@ -126,44 +91,33 @@ $spw:(100vw/375);
         font-size: 14*$pcw;
         color: #888888;
         margin-top: 54*$pcw;
+        @include bp{
+          font-size: 14*$spw;
+        }
         li{
           margin-top: 16*$pcw;
+          @include bp{
+            margin-top: 24*$spw;
+          }
         }
       }
       .btn{
         @include btn-css
-        background-color: #202037;
-        border-radius: 35*$pcw;
+        @include bp{
+          width: auto;
+        }
         a{
           display: block;
           padding: 30*$pcw 70*$pcw;
           color: #fff;
           font-size: 16*$pcw;
+          font-weight: bold;
+          @include bp{
+            padding: 24*$spw 70*$spw;
+            font-size: 16*$spw;
+          }
         }
       }
-    }
-  }
-}
-.contact{
-  margin: 0 auto 101*$pcw;
-  &-p{
-    margin-top: 161*$pcw;
-    text-align: center;
-    font-size: 20*$pcw;
-    font-family:  "游ゴシック", "Yu Gothic", "游ゴシック体", YuGothic;
-  }
-  .btn{
-    @include btn-css
-    background-color: #202037;
-    width: 520*$pcw;
-    height: 110*$pcw;
-    border-radius: 55*$pcw;
-    &-radius{
-      display: inline-block;
-      color: #fff;
-      margin: 35*$pcw auto;
-      font-size: 35*$pcw;
-      font-family: Avenir;
     }
   }
 }

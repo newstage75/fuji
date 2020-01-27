@@ -38,7 +38,9 @@
               テキストですダミーテキストです。テキストですダミーテキストです。テキストですダミーテキストです。テキストですダミーテキストです。テキストですダミーテキストです。テキストですダミーテキストです。テキストですダミーテキストです。テキストですダミーテキストです。テキストですダミーテキストです。テキストですダミーテキストです。テキストですダミーテキストです。テキストですダミーテキストです。テキストですダミーテキストです。テキストですダミーテキストです。テキストですダミーテキストです。テキストですダミーテキストです。テキストですダミーテキストです。テキストですダミーテキストです。テキストですダミーテキストです。テキストですダミーテキストです。テキストですダミーテキストです。</p>
           <h3 class="ko-midashi">タイトル小見出し</h3>
           <p class="ko-text">テキストですダミーテキストです。テキストですダミーテキストです。テキストですダミーテキストです。テキストですダミーテキストです。テキストですダミーテキストです。テキストですダミーテキストです。テキストですダミーテキストです。テキストですダミーテキストです。テキストですダミーテキストです。テキストですダミーテキストです。テキストですダミーテキストです。テキストですダミーテキストです。テキストですダミーテキストです。テキストですダミーテキストです。テキストですダミーテキストです。テキストですダミーテキストです。テキストですダミーテキストです。テキストですダミーテキストです。テキストですダミーテキストです。テキストですダミーテキストです。テキストですダミーテキストです。</p>
-          <img class="bottom-image" src="img/blog1.png" alt="">
+          <div class="bottom">
+              <img class="bottom-image" src="img/blog1.png" alt="">
+          </div>
         </article>
       </div>
       <section class="recently">
@@ -46,14 +48,14 @@
             <div class="blog">
               <ul class="blog-box">
                 <li class="blog-box-li">
-                  <a href="blog-page.html"><img class="blog-image" src="img/office-image.png" alt=""></a>
+                  <a href="blog-page.html"><img class="blog-image" src="img/blog1.png" alt=""></a>
                   <time class="blog-time">2019/11/11</time>
                   <dl>
                     <dt class="blog-title">タイトルタイトル</dt>
                     <dd class="blog-content">簡単な説明簡単な説明簡単な説</dd>
                   </dl>
                   <li class="blog-box-li">
-                    <a href="blog-page.html"><img class="blog-image" src="img/blog1.png" alt=""></a>
+                    <a href="blog-page.html"><img class="blog-image" src="img/office-image.png" alt=""></a>
                     <time class="blog-time">2019/11/10</time>
                     <dl>
                       <dt class="blog-title">タイトルタイトル</dt>
@@ -71,7 +73,7 @@
               </div>
       </section>
           <section class="contact">
-            <p class="contact-p">まずはメールでお気軽にお問い合わせください</p>
+            <p class="contact-p">まずはメールで<br class="sp_br">お気軽にお問い合わせください</p>
             <div class="btn">
               <a href="contact.html" class="btn-radius">CONTACT</a>
             </div>
@@ -80,3 +82,13 @@
         <footer class="footer">
 
         </footer>
+        <!-- drawer.js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/drawer/3.2.2/js/drawer.min.js"></script>
+        <!-- ドロワーメニューの利用宣言 -->
+        <script>
+        $(document).ready(function() {
+          $('.drawer').drawer();
+        });
+        </script>
+      </body>
+    </html>

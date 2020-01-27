@@ -10,21 +10,20 @@
   <link rel="stylesheet" href="./css/about.min.css">
 </head>
 <body class="body">
-  <header class="header clearfix">
-    <header class="header">
-      <div class="header-wrapper clearfix">
-        <h1 class="logo"><a href="index.html"><img src="img/logo.svg"></a></h1>
-        <nav class="nav" role="navigation">
-          <ul class="nav-menu">
-            <li><a class="nav-menu-item" href="contact.html">Contact</a></li>
-            <li><a class="nav-menu-item" href="blog.html">Blog</a></li>
-            <li><a class="nav-menu-item" href="price.html">Price</a></li>
-            <li><a class="nav-menu-item" href="service.html">Service</a></li>
-            <li><a class="nav-menu-item" href="about.html">About</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+  <header class="header">
+    <div class="header-wrapper clearfix">
+      <h1 class="logo"><a href="index.html"><img src="img/logo.svg"></a></h1>
+      <nav class="nav" role="navigation">
+        <ul class="nav-menu">
+          <li><a class="nav-menu-item" href="contact.html">Contact</a></li>
+          <li><a class="nav-menu-item" href="blog.html">Blog</a></li>
+          <li><a class="nav-menu-item" href="price.html">Price</a></li>
+          <li><a class="nav-menu-item" href="service.html">Service</a></li>
+          <li><a class="nav-menu-item" href="about.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
   <main>
     <div class="page">
       <h2 class="page-title">About</h2>
@@ -44,7 +43,7 @@
     <section class="point">
       <div class="title">
         <h2 class="title-name">Point</h2>
-        <h3 class="title-copy"> 制作会社での経歴を活かしたご提案ができます</h4>
+        <h3 class="title-copy"> 制作会社での経歴を<br class="sp_br">活かしたご提案ができます</h4>
         </div>
         <div class="point-content">
           <p class="point-content-p">
@@ -53,6 +52,7 @@
             当事務所ではIT法務（契約書作成や各種許認可手続きなど）を中心に、海外技術者のビザ手続き、そしてwebを介した新たなビジネスモデルとして評判の民泊（登録手続き）など、広くwebに関する手続きのサポートを行ってまいります。
           </p>
           <p class="point-content-p">
+            <br class="sp_br">
             書類作成など法律面からあなたのwebサービスのサポートをします。<br>
             新たなwebサービスが生まれ、そのサービスを利用することで多くの人々の心や生活が豊かになる。<br>
             そしていつか日本が世界のIT分野をリードする日がくることを願っています。<br>
@@ -76,9 +76,9 @@
           <img  class="office-right" src="img/office-image.png" alt="オフィスイメージ">
         </div>
       </section>
-      <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d433.35998054183466!2d135.75595381888556!3d35.01733542411868!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6001087e8f947a7d%3A0x6a610bd4c980dd14!2z44CSNjA0LTAwOTEg5Lqs6YO95bqc5Lqs6YO95biC5Lit5Lqs5Yy65qKF5bGL55S65Li45aSq55S66YCa6Yec5bqn5p2x5YWl77yR77yX77yY!5e0!3m2!1sja!2sjp!4v1579612884299!5m2!1sja!2sjp" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+      <div id="map"></div>
       <section class="contact">
-        <p class="contact-p">まずはメールでお気軽にお問い合わせください</p>
+        <p class="contact-p">まずはメールで<br class="sp_br">お気軽にお問い合わせください</p>
         <div class="btn">
           <a href="contact.html" class="btn-radius">CONTACT</a>
         </div>
@@ -87,4 +87,29 @@
     <footer class="footer">
 
     </footer>
+    <!-- マップオリジナル -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBv3idrO7k2VvsOlh5hN0hZd7tNvuvZ0VI"></script>
+<script>
+    // id属性の指定
+    var mapDiv = document.getElementById( "map" ) ;
+    // 位置座標を変数mapPositionに代入
+    var mapPosition = {
+      lat: 35.017189, // 緯度
+      lng: 135.756307// 経度
+    };
+    // 地図のオプション
+    var mapOptions = {
+      center: mapPosition ,
+      zoom: 17 ,
+    } ;
+    // Mapクラスを変数mapに代入
+    var map = new google.maps.Map( mapDiv, mapOptions );
+    // Markerクラスの設定
+    var marker = new google.maps.Marker( {
+      map: map ,
+      position: mapPosition ,
+      icon: "img/map-small.png" ,
+    } ) ;
+  </script>
   </body>
+</html>

@@ -1,72 +1,16 @@
-@charset "UTF-8";
+@import "common.scss";
 
-$pc: 1280px;//PC
-$bp: 660px;//ブレークポイント
-
-$pcw:(100vw/1280);
-$spw:(100vw/375);
-
-
-//ブレークポイントのメディアクエリ
-@mixin bp {
-  @media (max-width: ($bp)) {
-    @content;
-  }
-}
-//タイトルPCフォント
-@mixin title-font-pc{
-  font-size: 48*$pcw;
-  font-family: Avenir;
-  color: #A4ABB0;
-  text-align: center;
-  font-weight: bold;
-}
-//タイトルSPフォント
-@mixin title-font-sp{
-
-}
-//説明文フォント
-@mixin content-font-pc{
-  font-size: 16*$pcw;
-  line-height: 1.8;
-  font-family: "游ゴシック体", YuGothic;
-  color: #A4ABB0;
-}
-//説明文SPフォント
-@mixin content-font-sp{
-
-}
-//ボタンのCSS
-@mixin btn-css{
-  background-color: #364D6A;
-  border-radius: 35*$pcw;
-  cursor: pointer;
-  display: block;
-  text-align: center;
-  margin: 50*$pcw auto;
-  &:hover{
-    opacity: 0.8;
-    transition: 0.3s;
-  }
-}
-
-.page{
-  background-color: #202037;
-  &-title{
-    font-size: 48*$pcw;
-    padding: 114*$pcw 537*$pcw;
-    text-align: center;
-    color: #fff;
-    font-family: Avenir;
-  }
-}
 .top{
   height: 630*$pcw;
   background: url(../img/service-top.png) center no-repeat;
   background-size: cover;
 }
+
 .blog{
   margin: 126*$pcw 91*$pcw 0;
+  @include bp{
+    margin:30*$spw 29*$spw 0 ;
+  }
   .title{
     @include title-font-pc;
   }
@@ -77,16 +21,31 @@ $spw:(100vw/375);
     &-li{
       width: 335*$pcw;
       margin-top: 50*$pcw;
+      @include bp{
+         width: 147*$spw;
+      }
       .blog-image{
-        width: 335*$pcw;
-        height: 231*$pcw;
         max-width: 335*$pcw;
         max-height: 231*$pcw;
+        height: 231*$pcw;
+        width: auto;
+        object-fit: cover;
+        display: block;
+        margin: auto;
+        @include bp{
+          max-width: 150*$spw;
+          max-height: 103*$spw;
+          height: 103*$spw;
+          width: auto;
+        }
       }
       .blog-time{
         margin-top: 10*$pcw;
         width: 261*$pcw;
         @include content-font-pc;
+        @include bp{
+           width: 100%;
+        }
       }
       .blog-title{
         margin-top: 13*$pcw;
@@ -94,35 +53,44 @@ $spw:(100vw/375);
         font-family: "游ゴシック", "Yu Gothic", "游ゴシック体", YuGothic;
         font-size: 20*$pcw;
         color: #5B5C5C;
+        @include bp{
+           width: 100%;
+        }
       }
       .blog-content{
         margin-top: 13*$pcw;
         width: 261*$pcw;
         @include content-font-pc;
+        @include bp{
+           width: 100%;
+        }
       }
     }
   }
 }
-.contact{
-  margin: 0 auto 101*$pcw;
-  &-p{
-    margin-top: 161*$pcw;
-    text-align: center;
-    font-size: 20*$pcw;
-    font-family:  "游ゴシック", "Yu Gothic", "游ゴシック体", YuGothic;
-  }
-  .btn{
-    @include btn-css
-    background-color: #202037;
-    width: 520*$pcw;
-    height: 110*$pcw;
-    border-radius: 55*$pcw;
-    &-radius{
+.btn-wrapper{
+  text-align: center;
+  margin-top: 135*$pcw;
+  .next{
+    &-page{
+      border: 1*$pcw solid #707070;
       display: inline-block;
-      color: #fff;
-      margin: 35*$pcw auto;
-      font-size: 35*$pcw;
-      font-family: Avenir;
+      margin: 0 5*$pcw;
+      &:hover{
+        border: 3*$pcw solid #707070;
+      }
+      a{
+        display: block;
+        font-size: 16*$pcw;
+        padding: 16*$pcw 20*$pcw;
+        font-family: Avenir;
+        font-weight: bold;
+        color: #1D1D1D;
+      }
+      .selected{
+        background-color: #1D1D1D;
+        color: #fff;
+      }
     }
   }
 }
